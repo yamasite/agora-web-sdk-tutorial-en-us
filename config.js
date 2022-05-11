@@ -7,7 +7,7 @@ const config = {
   },
   header: {
     title:
-      "<a href='https://agorawebsdktutorialmain.gatsbyjs.io/'>声网 Agora 实时音视频 Web SDK 教程</a>",
+      "<a href='https://agorawebsdktutorialmain.gatsbyjs.io/'>Agora RTC Web SDK Tutorial</a>",
     helpUrl: '',
     tweetText: '',
     social: ``,
@@ -32,7 +32,7 @@ const config = {
     collapsedNav: [
     '/introduction', // add trailing slash if enabled above
      ],
-    links: [{ text: '声网 Agora 官方网站', link: 'https://agora.io' }, { text: '声网 Agora 文档中心', link: 'https://docs.agora.io' }, { text: 'Web SDK 示例项目', link: 'https://github.com/AgoraIO/API-Examples-Web' }],
+    links: [{ text: 'Agora Official Site', link: 'https://agora.io' }, { text: 'Agora Documentation Center', link: 'https://docs.agora.io' }, { text: 'Web SDK Sample Project', link: 'https://github.com/AgoraIO/API-Examples-Web' }],
     frontline: false,
     ignoreIndex: true,
     title:

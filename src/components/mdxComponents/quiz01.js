@@ -4,7 +4,7 @@ const quiz = {
     "quizTitle": "Quiz",
     "questions": [
       {
-        "question": "如何检查当前 SDK 的版本号？",
+        "question": "How to check the SDK version？",
         "questionType": "text",
         "answers": [
           "AgoraRTC.getSdkVersion",
@@ -12,13 +12,13 @@ const quiz = {
           "AgoraRTC.VERSION"
         ],
         "correctAnswer": "3",
-        "messageForCorrectAnswer": "回答正确！",
-        "messageForIncorrectAnswer": "回答错误！",
+        "messageForCorrectAnswer": "Correct!",
+        "messageForIncorrectAnswer": "Wrong answer!",
         "point": "10",
       },
 
       {
-        "question": "如何检查 SDK 是否兼容当前浏览器？",
+        "question": "How to check whether the SDK is compatible with the browser?",
         "questionType": "text",
         "answers": [
             "AgoraRTC.getSdkVersion",
@@ -26,8 +26,8 @@ const quiz = {
             "AgoraRTC.VERSION"
         ],
         "correctAnswer": "2",
-        "messageForCorrectAnswer": "回答正确！",
-        "messageForIncorrectAnswer": "回答错误！",
+        "messageForCorrectAnswer": "Correct!",
+        "messageForIncorrectAnswer": "Wrong answer!",
         "point": "10",
       }
     ]
