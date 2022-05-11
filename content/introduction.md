@@ -1,16 +1,16 @@
 ---
-title: "一行代码集成 SDK"
-metaTitle: "一行代码集成 SDK"
-metaDescription: "一行代码集成 SDK"
+title: "Integrate the SDK with one line of code"
+metaTitle: "Integrate the SDK with one line of code"
+metaDescription: "Integrate the SDK with one line of code"
 ---
 
-在这个部分，你将学会如何用一行代码集成声网实时音视频 Web SDK 并验证 SDK 版本和浏览器兼容性。
+In this part, you learn to integrate Agora RTC Web SDK by using one line of code and check the SDK version and browser compatibility.
 
-## 实现方法
+## Implementation
 
-你可以通过以下方法集成并验证 SDK 版本。本文假设你的项目是纯 HTML + JavaScript + CSS。
+You can use the following method to integrate the SDK and check the SDK version and browser compatibility. This page assumes that you are using HTML + JavaScript + CSS.
 
-### 步骤一：获取并集成 SDK
+### Step 1: Get and integrate the SDK
 
 最简单的方式是通过网络链接获取并集成。本教程以 v4.9.3 为例。你可以在 HTML 文件的 `<head>` 部分加入引用：
 
@@ -20,7 +20,7 @@ metaDescription: "一行代码集成 SDK"
 
 SDK 会在全局导出一个 `AgoraRTC` 对象，直接访问这个对象即可。
 
-### 步骤二：验证 SDK 版本
+### Step 2: Check the SDK version
 
 我们可以通过调用 SDK 的方法，将 SDK 版本打印到 HTML 文件中来验证集成。
 
@@ -44,7 +44,7 @@ let version = AgoraRTC.VERSION;
 document.getElementById("version").innerHTML = version;
 ```
 
-### 步骤三：验证浏览器兼容性
+### Step 3: Check browser compatibility
 
 确保你的 HTML 文件中包含一个 id 为 `compatibility` 的 `<span>` 标签：
 
@@ -71,7 +71,7 @@ switch (isSupported) {
 document.getElementById("compatibility").innerHTML = supportText;
 ```
 
-## 效果验证
+## Programming task
 
 你可以在下面的 CodePen 控件中分别对 HTML、CSS 和 JavaScript 文件进行编辑，并运行项目验证效果。如果运行成功，HTML 页面会显示 SDK 的版本号并检查 SDK 是否兼容当前浏览器。
 
@@ -83,6 +83,6 @@ document.getElementById("compatibility").innerHTML = supportText;
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
-## 课后练习
+## Questions
 
 <Newquiz01 />

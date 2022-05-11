@@ -1,13 +1,13 @@
 const config = {
   gatsby: {
     pathPrefix: '/',
-    siteUrl: 'https://agorawebsdktutorialmain.gatsbyjs.io',
+    siteUrl: 'https://agorawebsdktutorialenusmain.gtsb.io/',
     gaTrackingId: null,
     trailingSlash: false,
   },
   header: {
     title:
-      "<a href='https://agorawebsdktutorialmain.gatsbyjs.io/'>Agora RTC Web SDK Tutorial</a>",
+      "<a href='https://agorawebsdktutorialenusmain.gtsb.io//'>Agora RTC Web SDK Tutorial</a>",
     helpUrl: '',
     tweetText: '',
     social: ``,
@@ -42,7 +42,7 @@ const config = {
     title: 'RTC Web SDK Training | Agora',
     description: 'Documentation built with mdx. Powering docs.agora.io ',
     ogImage: null,
-    docsLocation: 'https://github.com/AgoraDoc/agora-web-sdk-tutorial/tree/master/content',
+    docsLocation: 'https://github.com/yamasite/agora-web-sdk-tutorial-en-us/tree/master/content',
     favicon: 'https://web-cdn.agora.io/doc-center/image/agora-logo.png',
   },
   pwa: {

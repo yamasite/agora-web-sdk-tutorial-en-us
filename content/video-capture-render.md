@@ -175,6 +175,6 @@ metaDescription: "采集并渲染本地视频"
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
-## 课后练习
+## Questions
 
 <Newquiz02 />
