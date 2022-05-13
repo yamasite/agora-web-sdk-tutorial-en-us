@@ -12,10 +12,10 @@ You can use the following method to integrate the SDK and check the SDK version 
 
 ### Step 1: Get and integrate the SDK
 
-The simplest way is to get the SDK by using a network URL. Taking v4.9.3 as an example, you add the reference to the `<head>` part of an HTML file:
+The simplest way is to get the SDK by using a network URL. Taking v4.11.0 as an example, you add the reference to the `<head>` part of an HTML file:
 
 ```html
-<script src="https://download.agora.io/sdk/release/AgoraRTC_N-4.9.3.js" type="text/javascript"></script>
+<script src="https://download.agora.io/sdk/release/AgoraRTC_N-4.11.0.js" type="text/javascript"></script>
 ```
 
 The SDK exports a global `AgoraRTC` object, which you can directly access.

@@ -1,31 +1,32 @@
 ---
-title: "拓展内容：采集屏幕视频"
-metaTitle: "拓展内容：采集屏幕视频"
-metaDescription: "拓展内容：采集屏幕视频"
+title: "Optional: Capture the Screen"
+metaTitle: "Optional: Capture the Screen"
+metaDescription: "Optional: Capture the Screen"
 ---
 
-> 这个部分属于拓展内容，为选做，对下面的教程没有影响。如果你对采集屏幕视频没有兴趣，也可以直接跳转到下一个章节。
+> This tutorial is optional. If you are not interested in screen capturing, you can move along to the next tutorial.
 
-在这个部分，你将学会如何使用声网实时音视频 Web SDK 采集屏幕视频。
+In this tutorial, you learn how to use the Agora RTC Web SDK to capture the screen.
 
-## 实现方法
+## Implementation
 
-要使用声网 SDK 实现浏览器端的屏幕共享，需要满足以下条件：
+To capture screen, you must meet the following conditions:
 
-- 通过浏览器录制屏幕并截取系统声音。
-- 将录制的视频和音频传输给 SDK。
+- Capture the screen and get system audio
+- Send the captured video and audio to the SDK
 
-对于声网实时音视频 Web SDK，你需要：
+For the Agora RTC Web SDK, refer to the following step to capture screen.
 
-调用 `createScreenVideoTrack` 创建一个屏幕视频轨道。
+Call `createScreenVideoTrack` to create a screen video track.
 
 **HTML**
 
 ```html
-<h1>屏幕共享</h1>
+<h1>Share the screen</h1>
 <div>
   <button id="enable_sound">Share with Sound Enabled</button>
   <button id="disable_sound">Share with Sound Disabled</button>
+  <button id="reset">Reset the play area</button>
 </div>
 <div id="play-area"></div>
 ```
@@ -49,19 +50,19 @@ width: 50%;
 **JavaScript**
 
 ```javascript
-// 支持 Edge、Chrome、Safari、FireFox 浏览器
-// 分享声音
+// Supports Edge, Chrome, Safari, and FireFox
+// Shares audio
 document.getElementById("enable_sound").onclick = function shareWithSound() {
   AgoraRTC.createScreenVideoTrack(
     {
-      // 配置编码属性
+      // Encoding config
       encoderConfig: "1080p_1",
-      // 设置视频传输优化模式，仅 Chrome 支持此参数
+      // Set video transmission optimization mode. Only Chrome supports this parameter.
       optimizationMode: "detail",
-      // 仅 FireFox 支持此参数
+      // Only FireFox supports this parameter
       screenSourceType: "screen" // 'screen', 'application', 'window'
     },
-    // 允许传输音频。对于 Chrome 浏览器，仅在分享 Chrome 标签页时生效。分享 Chrome 标签页之外的页面会抛出错误。
+    // Enables audio transmission. For Chrome, this parameter works only when sharing a Chrome tab page.
     "enable"
   )
     .then((trackList) => {
@@ -73,19 +74,19 @@ document.getElementById("enable_sound").onclick = function shareWithSound() {
     });
 };
 
-// 不分享声音
+// Encoding config
 document.getElementById(
   "disable_sound"
 ).onclick = function shareWithoutSound() {
   AgoraRTC.createScreenVideoTrack(
     {
-      // 配置编码属性
+      // Encoding config
       encoderConfig: "1080p_1",
-      // 设置视频传输优化模式，仅 Chrome 支持此参数
+      // Set video transmission optimization mode. Only Chrome supports this parameter.
       optimizationMode: "detail",
-      // 仅 FireFox 支持此参数
+      // Only FireFox supports this parameter
       screenSourceType: "screen" // 'screen', 'application', 'window'
-      // 不允许传输音频。
+      // Does not enable audio transmission.
     },
     "disable"
   )
@@ -96,17 +97,16 @@ document.getElementById(
       console.log("Failed to play screen!", e);
     });
 };
-
 ```
 
-## 效果验证
+## Programming practices
 
-你可以在下面的 CodePen 控件中分别对 HTML、CSS 和 JavaScript 文件进行编辑，并运行项目验证效果。如果运行成功，HTML 页面会在本地渲染屏幕共享的画面和声音。
+Use the following CodePen editor to edit the HTML, CSS, and JavaScript file and run the project. If successful, the HTML page renders the captured video and audio.
 
-> 对于 Chrome 浏览器，示例代码中的分享音频选项仅在分享 Chrome 标签页时生效。如果你点击 **Share with Sound Enabled** 分享 Chrome 标签页之外的页面会抛出错误。
+> For Chrome, the Share with Audio button works only when you are sharing a Chrome tab page. If you click **Share with Sound Enabled** to share content other than a Chrome tab page, an error occurs.
 
-<iframe height="800" style="width: 100%;" scrolling="no" title="Extension: Screen sharing" src="https://codepen.io/yamasite/embed/preview/LYerLyK?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true" allow="microphone; display-capture">
-  See the Pen <a href="https://codepen.io/yamasite/pen/LYerLyK">
+<iframe height="800" style="width: 100%;" scrolling="no" title="Extension: Screen sharing" src="https://codepen.io/yamasite/embed/preview/XWZNWPZ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true" allow="microphone; display-capture">
+  See the Pen <a href="https://codepen.io/yamasite/pen/XWZNWPZ">
   Extension: Screen sharing</a> by Lutkin Wang (<a href="https://codepen.io/yamasite">@yamasite</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
