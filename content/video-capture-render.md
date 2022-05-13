@@ -15,7 +15,7 @@ If you need to use a camera to capture video for a webpage, you need to meet the
 - A camera is connected to the PC.
 - The browser has access to the camera.
 
-For the Agora RTC Web SDK, refer to the following steps:
+For the Agora RTC Web SDK to capture video for a webpage, refer to the following steps:
 
 1. Call `getCameras` to get a list of available cameras.
 
@@ -83,7 +83,7 @@ For the Agora RTC Web SDK, refer to the following steps:
     }
     ```
 
-3. Call `createCameraVideoTrack` to create a camera video track and call the member method `play` to render the vide by a DOM element.
+3. Call `createCameraVideoTrack` to create a camera video track and call the member method `play` to render the video by a DOM element.
 
     > The track in the SDK is similar to the [track](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaStreamTrack) in WebRTC. A track represents a specific video or audio source. Agora RTC SDK makes abstractions of video and audio tracks from different sources and defines different kinds of tracks, such as camera video track, screen video track, and custom video track.
 
@@ -164,7 +164,7 @@ For the Agora RTC Web SDK, refer to the following steps:
     ```
 
 
-## Programming practice
+## Programming task
 
 Use the following CodePen editor to edit the HTML, CSS, and JavaScript file and run the project. If successful, the HTML page shows the device ID of your selected camera and renders the video captured by your selected camera.
 

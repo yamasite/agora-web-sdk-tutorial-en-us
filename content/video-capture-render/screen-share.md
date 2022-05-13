@@ -99,7 +99,7 @@ document.getElementById(
 };
 ```
 
-## Programming practices
+## Programming task
 
 Use the following CodePen editor to edit the HTML, CSS, and JavaScript file and run the project. If successful, the HTML page renders the captured video and audio.
 

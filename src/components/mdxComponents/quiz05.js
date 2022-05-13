@@ -4,7 +4,7 @@ const quiz = {
     "quizTitle": "Quiz",
     "questions": [
       {
-        "question": "如何通过 SDK 发送媒体流？",
+        "question": "How to send media streams with the SDK?",
         "questionType": "text",
         "answers": [
           "AgoraRTC.publish",
@@ -12,34 +12,34 @@ const quiz = {
           "AgoraRTCClient.publish"
         ],
         "correctAnswer": "3",
-        "messageForCorrectAnswer": "回答正确！",
-        "messageForIncorrectAnswer": "回答错误！",
+        "messageForCorrectAnswer": "Correct answer!",
+        "messageForIncorrectAnswer": "Wrong answer!",
         "point": "10",
       },
 
       {
-        "question": "如何通过 SDK 接收媒体流？",
+        "question": "How to receive streams with the SDK?",
         "questionType": "text",
         "answers": [
-            "通过 \"user-published\" 事件，调用 subscribe 订阅发流的远端用户",
-            "通过 \"user-joined\" 事件，调用 subscribe 订阅发流的远端用户",
+            "Call subscribe to receive streams by the \"user-published\" event",
+            "Call subscribe to receive streams by the \"user-joined\" event",
         ],
         "correctAnswer": "1",
-        "messageForCorrectAnswer": "回答正确！",
-        "messageForIncorrectAnswer": "回答错误！",
+        "messageForCorrectAnswer": "Correct answer!",
+        "messageForIncorrectAnswer": "Wrong answer!",
         "point": "10",
       },
 
       {
-        "question": "如何通过 SDK 播放接收的媒体流？",
+        "question": "How to play the receive media stream?",
         "questionType": "text",
         "answers": [
-            "通过 subscribe 获取远端用户的视频轨道后，调用 play 进行播放",
-            "通过 join 获取远端用户的视频轨道后，调用 play 进行播放",
+            "Call play to play the video track returned by the subscribe method",
+            "Call play to play the video track returned by the join method",
         ],
         "correctAnswer": "1",
-        "messageForCorrectAnswer": "回答正确！",
-        "messageForIncorrectAnswer": "回答错误！",
+        "messageForCorrectAnswer": "Correct answer!",
+        "messageForIncorrectAnswer": "Wrong answer!",
         "point": "10",
       },
     ]
