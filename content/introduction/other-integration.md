@@ -1,67 +1,65 @@
 ---
-title: "拓展内容：在 TypeScript 项目中集成 SDK"
-metaTitle: "拓展内容：在 TypeScript 项目中集成 SDK"
-metaDescription: "拓展内容：在 TypeScript 项目中集成 SDK"
+title: "Optional: Integrate the SDK in a TypeScript Project"
+metaTitle: "Optional: Integrate the SDK in a TypeScript Project"
+metaDescription: "Optional: Integrate the SDK in a TypeScript Project"
 ---
 
-> 这个部分属于拓展内容，为选做，对下面的教程没有影响。如果你对 TypeScript 没有兴趣，也可以直接跳转到下一个章节。
+> This tutorial is optional. If you are not interested in TypeScript, move along to the next tutorial.
 
-在这个部分，你将学会在 TypeScript 项目中集成声网实时音视频 Web SDK 并验证 SDK 版本和浏览器兼容性。
+In this part, you learn how to integrate the Agora RTC Web SDK in a TypeScript project and check the SDK version and browser compatibility.
 
-如果你不熟悉 TypeScript，推荐参考 [TypeScript 入门教程](https://github.com/xcatliu/typescript-tutorial) 或[官方手册](http://www.typescriptlang.org/docs/handbook/basic-types.html)。
+If you are not familiar with TypeScript, we recommend that you refer to the [official documentation](http://www.typescriptlang.org/docs/handbook/basic-types.html).
 
-## 实现方法
+## Implementation
 
-你可以通过以下方法集成并验证 SDK 版本。假设你的项目使用 npm 构建，
+Use the following methods to integrate and check the SDK version. We assume you use npm to build your project.
 
-### 步骤一：获取并集成 SDK
+### Step 1: Get and integrate the SDK
 
-本教程以 v4.9.3 为例。你可以全局安装声网实时音视频 Web SDK：
+Taking v4.9.3 as an example, you can globally install the Agora RTC Web SDK:
 
 ```shell
 npm i agora-rtc-sdk-ng
 ```
 
-在 `.ts` 文件中引用 SDK 就可以通过 `AgoraRTC` 对象调用 SDK：
+Import the `AgoraRTC` from `"agora-rtc-sdk-ng"` in the `.ts` file to access the SDK:
 
 ```typescript
 import AgoraRTC from "agora-rtc-sdk-ng"
 ```
 
-### 步骤二：验证 SDK 版本
+### Step 2: Check the SDK version
 
-我们可以通过调用 SDK 的方法，将 SDK 版本打印到 HTML 文件中来验证集成。
-
-确保你的 HTML 文件中包含一个 id 为 `version` 的 `<p>` 标签：
+Make sure your HTML file contains a `<p>` tag with id `version`.
 
 **HTML**
 
 ```html
-<p>你使用的声网实时音视频 Web SDK 版本是：</p>
+<p>The version of the Agora RTC Web SDK is: </p>
 <p id="version"> </p>
 ```
 
-在 TypeScript 文件中，先通过 `VERSION` 变量获取 SDK 版本号，再通过 `getElementById` 方法将版本号打印到 HTML 中。
+In the JavaScript file, use the `VERSION` property to get the SDK version and then use `getElementById` to print the SDK version:
 
 **TypeScript**
 
 ```typescript
 import AgoraRTC from "agora-rtc-sdk-ng"
-// AgoraRTC 类是声网实时音视频 Web SDK 的调用入口
+// The AgoraRTC class is the entry point of the Agora RTC Web SDK
 let version = AgoraRTC.VERSION;
-// 将 SDK 版本号打印到 HTML 中
+// Print the SDK version to HTML
 document.getElementById("version").innerHTML = version;
 ```
 
-### 步骤三：验证浏览器兼容性
+### Step 3: Check browser compatibility
 
-确保你的 HTML 文件中包含一个 id 为 `compatibility` 的 `<span>` 标签：
+Make sure your HTML file contains a `<span>` tag with id `compatibility`:
 
 ```html
-<p>你现在使用的浏览器 <span id="compatibility"> </span> 声网实时音视频 Web SDK。</p>
+<p>The browser you are using <span id="compatibility"> </span> Agora RTC Web SDK.</p>
 ```
 
-在 TypeScript 文件中，先通过 `checkSystemRequirements` 方法获取浏览器兼容信息，再通过 `getElementById` 方法将版本号打印到 HTML 中。
+In the JavaScript file, call `checkSystemRequirements` to get browser compatibility information, and then call `getElementById` to print the SDK version to HTML.
 
 ```typescript
 let supportText = "";
@@ -69,25 +67,25 @@ let isSupported = AgoraRTC.checkSystemRequirements();
 
 switch (isSupported) {
   case true:
-    supportText = "支持";
+    supportText = "supports";
     break;
   case false:
-    supportText = "不支持";
+    supportText = "does not support";
     break;
 }
 
-// 将浏览器兼容信息打印到 HTML 中
+// Print browser compatibility data to HTML
 document.getElementById("compatibility").innerHTML = supportText;
 ```
 
-## 效果验证
+## Programming task
 
-你可以在下面的 CodePen 控件中分别对 HTML、CSS 和 TypeScript 文件进行编辑，并运行项目验证效果。如果运行成功，HTML 页面会显示 SDK 的版本号并检查 SDK 是否兼容当前浏览器。
+Use the following CodePen editor to edit the HTML, CSS, and TypeScript file and run the project. If successful, the HTML page shows the SDK version and whether the SDK is compatible with the current browser.
 
-项目中已经引用了 SDK 的 npm 包作为外部 Package。在 Codepen 中用 cdn.skypack.dev 进行暂存。
+The project uses the npm package of the Agora RTC Web SDK as an external package and saved in cdn.skypack.dev for CodePen.
 
-<iframe height="400" style="width: 100%;" scrolling="no" title="Extension: Integrate SDK in a TypeScript project" src="https://codepen.io/yamasite/embed/preview/PoEYpGL?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="{true}">
-  See the Pen <a href="https://codepen.io/yamasite/pen/PoEYpGL">
+<iframe height="400" style="width: 100%;" scrolling="no" title="Extension: Integrate SDK in a TypeScript project" src="https://codepen.io/yamasite/embed/preview/ExQgzby?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="{true}">
+  See the Pen <a href="https://codepen.io/yamasite/pen/ExQgzby">
   Extension: Integrate SDK in a TypeScript project</a> by Lutkin Wang (<a href="https://codepen.io/yamasite">@yamasite</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
